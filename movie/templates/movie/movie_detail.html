@@ -9,14 +9,20 @@
   <link rel="stylesheet" href="{% static 'movie\css\style.css' %}">
 </head>
 <body>
-    <img src="{{movie.poster.url}}" alt="">
-    <h1>{{movie.title}}</h1> 
-    {% if movie.trailer.url != Null %} 
-    <video controls mute>
-       <source src="{{movie.trailer.url}}"> 
-    </video>
-    {% endif %}
-
+    <div class="container detaile-container  ">
+        <div class="d-flex align-items-start gap-3">
+            <div>
+                <img src="{{movie.poster.url}}" alt="">
+            </div>
+            <div>
+                <h1>{{movie.title}}</h1> 
+                {% if movie.trailer.url != Null %} 
+                <video controls mute width="100%">
+                <source src="{{movie.trailer.url}}"> 
+                </video>
+                {% endif %}
+            </div>
+        </div>
     <div class="form_review"> 
     </div>
     <section>
@@ -34,5 +40,6 @@
         {% endfor %}
     </div>
     </section>
+    </div>
 </body>
 </html>
